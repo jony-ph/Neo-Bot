@@ -1,2 +1,10 @@
-# Neo-Bot
-A Discord bot created with Python. Some features are music, searches, moderation and more.
+#Neo Bot
+A Discord Bot created with Python by Neo Computing :fire:
+
+##Features
+- Moderating :clipboard:
+- Searches :mag_right:
+- Games :video_game:
+- Music :headphones:
+
+###End
