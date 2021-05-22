@@ -11,12 +11,12 @@ class Chat_tools(commands.Cog):
         self.bot = bot
 
     @commands.command(pass_context = True, name = 'clear', help = 'Elimina mensajes del chat, puedes especificar cuantos')
-    async def clear(self, message, amount=2):
+    async def clear(self, ctx, amount=1):
 
         ''' Delete n amount of messages '''
 
-        await message.channel.purge(limit=30)
-        await message.channel.send(f'Se borraron {amount} mensajes')
+        await ctx.channel.purge(limit=amount+1)
+        await ctx.channel.send(f'Se borraron {amount} mensajes')
 
 
     @commands.command(pass_context = True, name = 'ping', help = 'Indica la latencia')
@@ -25,7 +25,7 @@ class Chat_tools(commands.Cog):
         ''' Measure latency '''
 
         latency = self.bot.latency
-        await ctx.send(f"Latencia: {round(latency*1000)}ms")
+        await ctx.channel.send(f"Latencia: {round(latency*1000)}ms")
 
 
 def setup(bot):
